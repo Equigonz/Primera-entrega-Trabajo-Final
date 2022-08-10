@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Catálogo
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+    {% for elemento in lista %}
+
+        {% if elemento == 'Libro1' %}
+
+            <h1 style="color:black">{{elemento}}</h1>
+
+        {% elif elemento == 'Libro2' %}
+
+            <h1 style="color:red">{{elemento}}</h1>
+
+        {% elif elemento == 'Libro3' %}
+
+            <h1 style="color:green">{{elemento}}</h1>
+
+        {% endif %}
+
+    {% endfor %}
+
+{% endblock %}
