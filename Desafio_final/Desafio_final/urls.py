@@ -1,10 +1,9 @@
 from django.contrib import admin
-from django.urls import path, include
-from Desafio_final.views import template_con_lista 
-from catalog.views import create_book
+from django.urls import path, include 
+from catalog.views import create_book, list_book
 
 urlpatterns = [
-    path('admin/', admin.site.urls),    
-    path('template_con_lista/', template_con_lista , name = 'template_con_lista'),
-    path('create_book/', create_book, name = 'create_book')
+    path('admin/', admin.site.urls),       
+    path('create_book/', create_book, name = 'create_book'),
+    path("list_book/", list_book, name = "list_book" )
 ]

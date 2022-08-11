@@ -11,3 +11,12 @@ def create_book(request):
         "new_book": new_book
     }
     return render(request,"new_book.html", context=context)
+
+
+def list_book(request):
+    books = Books.objects.all()
+    context = {
+        "book":books
+    }
+    return render(request, "list_book.html", context=context)
+    
