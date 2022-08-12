@@ -1,3 +1,12 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Template con lista
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+
 {% for book in book %} 
 
       <h3 class="card-title">{{book.title}}  </h3>
@@ -5,3 +14,5 @@
   
 {% endfor%}
 
+
+{% endblock %}

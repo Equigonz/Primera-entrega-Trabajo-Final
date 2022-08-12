@@ -9,7 +9,7 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <title>
         {% block titulo %}
-            titulo por defecto
+            Hola!!!!!
         {% endblock %}
     </title>
 </head>
@@ -26,13 +26,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/catalog/models/">Lista de productos</a>
+                    <a class="nav-link" href="/catalog/models/">no va a ningun lado</a> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/new_book/">new_book</a>
+                    <a class="nav-link" href="/create_book/">new_book</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/template_lista/" style="margin-right: 40rem ;">template_lista</a>
+                    <a class="nav-link" href="/list_book/" style="margin-right: 40rem ;">list_book</a>
                 </li>
                 {% if request.user.is_authenticated %}
                 <li class="nav-item active">

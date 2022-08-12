@@ -5,8 +5,8 @@ from catalog.models import Books
 
 # Create your views here.
 def create_book(request):  
-    new_book = Books.objects.create(title = "El Principito", 
-    book_genre = "aventura")
+    new_book = Books.objects.create(title = "El Alquimista", 
+    book_genre = "Autoayuda")
     context = {
         "new_book": new_book
     }
