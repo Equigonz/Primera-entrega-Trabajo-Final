@@ -9,7 +9,7 @@
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <title>
         {% block titulo %}
-            Hola!!!!!
+            Base
         {% endblock %}
     </title>
 </head>
@@ -26,29 +26,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/catalog/models/">no va a ningun lado</a> 
+                    <a class="nav-link" href="/catalog/models/"> no va a ningun lado</a> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/create_book/">new_book</a>
+                    <a class="nav-link" href="/create_book/">Crear libro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/list_book/" style="margin-right: 40rem ;">list_book</a>
+                    <a class="nav-link" href="/list_book/" style="margin-right: 40rem ;">Listado Libros</a>
                 </li>
-                {% if request.user.is_authenticated %}
-                <li class="nav-item active">
-                    <a class="nav-link" href="/users/logout/">Logout</a>
-                </li>
-                {% else %}
-                <li class="nav-item active">
-                    <a class="nav-link" href="/users/login/">Login</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/users/register/">Register</a>
-                </li>
-                {% endif %}
-
-
-
+             
 
             </ul>
             <form class="form-inline my-2 my-lg-0" action="/catalog/search-catalog/" method="GET">
