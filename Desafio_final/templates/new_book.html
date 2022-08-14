@@ -5,7 +5,20 @@
 {% endblock %}
 
 {% block contenido_que_cambia %}
-    <h1>El libro se llama {{new_book.title}} y es de genero {{new_book.book_genre}}</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    
+    <table>
+       
+       {{form_book.as_table}} 
+
+
+    </table>
+
+    <p><input type="submit" value="enviar"></p>
+
+</form>
 
     {% endblock %}
 
