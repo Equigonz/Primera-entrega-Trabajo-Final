@@ -10,5 +10,5 @@ urlpatterns = [
     path('create_ebook/', create_ebook, name = 'create_ebook'),
     path('create_audiobook/', create_audiobook, name = 'create_audiobook'),
     path("list_ebook/", list_ebook, name = "list_ebook" ),
-    path("list_audiobook/", list_audiobook, name = "list_audiobook" )
+    path("list_audiobook/", list_audiobook, name = "list_audiobook" )    
 ]

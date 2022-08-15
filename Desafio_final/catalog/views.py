@@ -47,8 +47,8 @@ def list_audiobook(request):
     return render(request, "list_audiobook.html", context=context)    
 
 def search_books(request):
-    search = request.GET['search']
-    books = Books.objects.filter(title__icontains=search)
+    search = request.GET["search"]
+    books = Books.objects.filter(title__icontains = search)
     context = {"books":books}
     return render(request, "search_books.html", context=context)
 
@@ -63,7 +63,7 @@ def create_ebook(request):
                title = form_ebook.cleaned_data["title"],
                book_genre = form_ebook.cleaned_data["book_genre"]
             )
-            return redirect(list_book)
+            return redirect(list_ebook)
 
     elif request.method == "GET":
         form_ebook = Formulario_create_ebook()
@@ -80,7 +80,7 @@ def create_audiobook(request):
                title = form_audiobook.cleaned_data["title"],
                book_genre = form_audiobook.cleaned_data["book_genre"]
             )
-            return redirect(list_book)   
+            return redirect(list_audiobook)   
 
     elif request.method == "GET":
         form_audiobook = Formulario_create_audiobook()
