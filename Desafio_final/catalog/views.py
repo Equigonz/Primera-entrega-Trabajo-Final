@@ -24,17 +24,6 @@ def create_book(request):
         return render(request,"create_book.html", context=context)
 
 
-
-
-  #original "create_book"
-   # new_book = Books.objects.create(title = "El Alquimista", 
-    #book_genre = "Autoayuda")
-    #context = {
-    #    "new_book": new_book
-    #}
-    #return render(request,"new_book.html", context=context)
-
-
 def list_book(request):
     books = Books.objects.all()
     context = {
@@ -42,12 +31,10 @@ def list_book(request):
     }
     return render(request, "list_book.html", context=context)
 
-def search_book(request):
-    print(request.GET)
-    return HTTPResponse(request.GET)
+def search_books(request):
+    search = request.GET['search']
+    books = Books.objects.filter(title__icontains=search)
+    context = {"books":books}
+    return render(request, "search_books.html", context=context)
     
-    #search = request.GET['search']
-    #products = Books.objects.filter(name__icontains=search)  
-    #context = {'books':books}
-    #return render(request, 'search_book.html', context=context)
-    
+      
