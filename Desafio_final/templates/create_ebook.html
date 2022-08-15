@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Creacion de Libros Electronicos
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form action="" method="POST">
+{% csrf_token %}
+    
+ <table>
+       
+    {{form_ebook.as_table}} 
+
+
+</table>
+
+<p><input type="submit" value="enviar"></p>
+
+</form>
+
+    {% endblock %}
