@@ -1,3 +1,4 @@
+from http.client import HTTPResponse
 from turtle import title
 from django.shortcuts import render, redirect
 from catalog.models import Books
@@ -8,19 +9,19 @@ from catalog.forms import Formulario_create_book
 def create_book(request):  
 
     if request.method == "POST":
-       form_book = Formulario_create_book(request.POST)
+        form_book = Formulario_create_book(request.POST)
 
-       if form_book.is_valid():
-           Books.objects.create(
-            title = form.cleaned_data["title"],
-            book_genre = form.cleaned_data["book_genre"]
-           )
-           return redirect(list_book)
+        if form_book.is_valid():
+            Books.objects.create(
+               title = form_book.cleaned_data["title"],
+               book_genre = form_book.cleaned_data["book_genre"]
+            )
+            return redirect(list_book)
           
-       elif request.method == "GET":
-             form_book = Formulario_create_book()
-             context = {"form_book": form_book}
-             return render(request,"new_book.html", context=context)
+    elif request.method == "GET":
+        form_book = Formulario_create_book()
+        context = {"form_book": form_book}
+        return render(request,"create_book.html", context=context)
 
 
 
@@ -40,4 +41,13 @@ def list_book(request):
         "book":books
     }
     return render(request, "list_book.html", context=context)
+
+def search_book(request):
+    print(request.GET)
+    return HTTPResponse(request.GET)
+    
+    #search = request.GET['search']
+    #products = Books.objects.filter(name__icontains=search)  
+    #context = {'books':books}
+    #return render(request, 'search_book.html', context=context)
     

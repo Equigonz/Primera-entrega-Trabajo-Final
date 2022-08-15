@@ -7,16 +7,16 @@
 {% block contenido_que_cambia %}
 
 <form action="" method="POST">
-    {% csrf_token %}
+{% csrf_token %}
     
-    <table>
+ <table>
        
-       {{form_book.as_table}} 
+    {{form_book.as_table}} 
 
 
-    </table>
+</table>
 
-    <p><input type="submit" value="enviar"></p>
+<p><input type="submit" value="enviar"></p>
 
 </form>
 
