@@ -6,8 +6,8 @@ Borrar Book
 
 {% block contenido_que_cambia %}
 
-<p>Titulo del Libro: {{Books.title}}</p>
-<p>Genero del Libro: {{Books.book_genre}}</p>
+<p>Titulo del Libro:   {{book.title}}</p>
+<p>Genero del Libro:   {{book.book_genre}}</p>
 
 <form action="" method="POST">
 {% csrf_token %}
