@@ -14,8 +14,10 @@
     <div class="card-body">
       <h5 class="card-title"> Titulo : {{book.title}}</h5>
       <p class="card-text">  Genero : {{book.book_genre}}</p>
-          </div>
-  </div>
+      <a href="#" class = "btn btn-primary">Editar</a>
+      <a href="/delete_book/{{book.id}}/" class = "btn btn-danger">Borrar</a>
+    </div>
+</div>
 
   
 {% endfor%}

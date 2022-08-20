@@ -1,8 +1,10 @@
 from http.client import HTTPResponse
+from multiprocessing import context
 from turtle import title
 from django.shortcuts import render, redirect
 from catalog.models import Books, Ebooks, Audiobooks
 from catalog.forms import Formulario_create_book, Formulario_create_ebook, Formulario_create_audiobook
+
 
 
 # Create your views here.
@@ -86,3 +88,9 @@ def create_audiobook(request):
         form_audiobook = Formulario_create_audiobook()
         context = {"form_audiobook": form_audiobook}
         return render(request,"create_audiobook.html", context=context)           
+
+def delete_book(request, pk):
+    if request.method == 'GET':
+        Book = Books.objects.get(pk=pk)
+        context = {'book':Book}
+        return render(request, 'delete_book.html', context=context)
