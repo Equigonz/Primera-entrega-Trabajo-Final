@@ -98,3 +98,12 @@ def delete_book(request, pk):
         book = Books.objects.get(pk=pk)
         book.delete()
         return redirect(list_book)    
+
+        Book = Books.objects.get(pk=pk)
+        context = {'book':Book}
+        return render(request, 'delete_book.html', context=context)
+    elif request.method == 'POST':
+        Book = Books.objects.get(pk=pk)
+        Book.delete()
+        return redirect(list_book)
+ 
