@@ -91,6 +91,10 @@ def create_audiobook(request):
 
 def delete_book(request, pk):
     if request.method == 'GET':
-        Book = Books.objects.get(pk=pk)
-        context = {'book':Book}
+        book = Books.objects.get(pk=pk)
+        context = {'book':book}
         return render(request, 'delete_book.html', context=context)
+    elif request.method == 'POST':
+        book = Books.objects.get(pk=pk)
+        book.delete()
+        return redirect(list_book)    
