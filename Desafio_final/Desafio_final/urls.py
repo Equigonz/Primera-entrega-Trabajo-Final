@@ -3,7 +3,8 @@ from django.urls import path, include
 from catalog.views import create_book, list_book, list_ebook,list_audiobook, search_books, create_ebook, create_audiobook
 
 urlpatterns = [
-    path('admin/', admin.site.urls),       
+    path('admin/', admin.site.urls),  
+    path("", list_book, name = "list_book" ),     
     path('create_book/', create_book, name = 'create_book'),
     path("list_book/", list_book, name = "list_book" ),
     path("search_books/", search_books, name = "search_books"),
