@@ -118,3 +118,40 @@ def delete_audiobook(request, pk):
         audiobook = Audiobooks.objects.get(pk=pk)
         audiobook.delete()
         return redirect(list_audiobook)   
+
+def update_book(request, pk):
+    if request.method == 'POST':
+        pass
+
+    elif request.method == 'GET':
+        book = Books.objects.get(id=pk)
+    
+        form_book = Formulario_create_book(initial={'title':book.title, 'book_genre':book.book_genre})
+        context = {'form_book': form_book}
+        
+        return render(request, 'update_book.html', context = context)
+
+def update_ebook(request, pk):
+    if request.method == 'POST':
+        pass
+
+    elif request.method == 'GET':
+        ebook = Ebooks.objects.get(id=pk)
+    
+        form_ebook = Formulario_create_ebook(initial={'title':ebook.title, 'book_genre':ebook.book_genre})
+        context = {'form_ebook': form_ebook}
+        
+        return render(request, 'update_ebook.html', context = context)
+
+def update_audiobook(request, pk):
+    if request.method == 'POST':
+        pass
+
+    elif request.method == 'GET':
+        audiobook = Audiobooks.objects.get(id=pk)
+    
+        form_audiobook = Formulario_create_ebook(initial={'title':audiobook.title, 'book_genre':audiobook.book_genre})
+        context = {'form_audiobook': form_audiobook}
+        
+        return render(request, 'update_audiobook.html', context = context)
+        

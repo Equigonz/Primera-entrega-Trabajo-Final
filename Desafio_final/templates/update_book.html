@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Actualización de Libros
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<form action="" method="POST">
+{% csrf_token %}
+    
+ <table>
+       
+    {{form_book.as_table}} 
+
+
+</table>
+
+<p><input type="submit" value="enviar"></p>
+
+</form>
+
+    {% endblock %}
