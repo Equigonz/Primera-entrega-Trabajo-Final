@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
-from catalog.views import create_book, list_book, list_ebook,list_audiobook, search_books, create_ebook, create_audiobook, delete_book
+#from Desafio_final.catalog.views import delete_audiobook
+#from Desafio_final.catalog.views import delete_ebook
+from catalog.views import create_book, list_book, list_ebook,list_audiobook, search_books, create_ebook, create_audiobook, delete_book, delete_ebook, delete_audiobook
 
 urlpatterns = [
     path('admin/', admin.site.urls),  
@@ -12,5 +14,7 @@ urlpatterns = [
     path('create_audiobook/', create_audiobook, name = 'create_audiobook'),
     path("list_ebook/", list_ebook, name = "list_ebook" ),
     path("list_audiobook/", list_audiobook, name = "list_audiobook" ),
-    path("delete_book/<int:pk>/", delete_book, name = 'delete_book')    
+    path("delete_book/<int:pk>/", delete_book, name = 'delete_book'),
+    path('delete_ebook/<int:pk>/', delete_ebook, name = 'delete_ebook'),
+    path('delete_audiobook/<int:pk>/', delete_audiobook, name = 'delete_audiobook')
 ]

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Borrar Ebook
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<p>Titulo del Ebook:   {{ebook.title}}</p>
+<p>Genero del Ebook:   {{ebook.book_genre}}</p>
+
+<form action="" method="POST">
+{% csrf_token %}
+    
+
+<p><input type="submit" value="Borrar"></p>
+
+</form>
+{% endblock %}

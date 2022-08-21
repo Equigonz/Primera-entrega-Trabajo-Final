@@ -98,3 +98,23 @@ def delete_book(request, pk):
         book = Books.objects.get(pk=pk)
         book.delete()
         return redirect(list_book)          
+
+def delete_ebook(request, pk):
+    if request.method == 'GET':
+        ebook = Ebooks.objects.get(pk=pk)
+        context = {'ebook':ebook}
+        return render(request, 'delete_ebook.html', context=context)
+    elif request.method == 'POST':
+        ebook = Ebooks.objects.get(pk=pk)
+        ebook.delete()
+        return redirect(list_ebook)  
+
+def delete_audiobook(request, pk):
+    if request.method == 'GET':
+        audiobook = Audiobooks.objects.get(pk=pk)
+        context = {'audiobook':audiobook}
+        return render(request, 'delete_audiobook.html', context=context)
+    elif request.method == 'POST':
+        audiobook = Audiobooks.objects.get(pk=pk)
+        audiobook.delete()
+        return redirect(list_audiobook)   

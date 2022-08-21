@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Borrar Audiobook
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<p>Titulo del Audiobook:   {{audiobook.title}}</p>
+<p>Genero del Audiobook:   {{audiobook.book_genre}}</p>
+
+<form action="" method="POST">
+{% csrf_token %}
+    
+
+<p><input type="submit" value="Borrar"></p>
+
+</form>
+{% endblock %}
