@@ -7,6 +7,7 @@ from catalog.forms import Formulario_create_book, Formulario_create_ebook, Formu
 
 
 
+
 # Create your views here.
 def create_book(request):  
 
@@ -178,6 +179,4 @@ def update_audiobook(request, pk):
         context = {'form_audiobook': form_audiobook}
         
         return render(request, 'update_audiobook.html', context = context)
-
-def index(request):
-    return render(request, 'index.html')
+        
