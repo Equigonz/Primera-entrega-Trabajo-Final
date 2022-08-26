@@ -178,4 +178,6 @@ def update_audiobook(request, pk):
         context = {'form_audiobook': form_audiobook}
         
         return render(request, 'update_audiobook.html', context = context)
-        
+
+def index(request):
+    return render(request, 'index.html')
