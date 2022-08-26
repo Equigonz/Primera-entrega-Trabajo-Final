@@ -22,5 +22,5 @@ urlpatterns = [
     path('update_book/<int:pk>/', update_book, name = 'update_book'),
     path('update_ebook/<int:pk>/', update_ebook, name = 'update_ebook'),
     path('update_audiobook/<int:pk>/', update_audiobook, name = 'update_audiobook'),
-    path('urls/', include('users.urls')),
+    path('users/', include('users.urls')),
 ]
