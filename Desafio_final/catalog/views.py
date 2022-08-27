@@ -4,7 +4,7 @@ from turtle import title
 from django.shortcuts import render, redirect
 from catalog.models import Books, Ebooks, Audiobooks
 from catalog.forms import Formulario_create_book, Formulario_create_ebook, Formulario_create_audiobook
-
+from django.views.generic import DetailView 
 
 
 
@@ -179,4 +179,13 @@ def update_audiobook(request, pk):
         context = {'form_audiobook': form_audiobook}
         
         return render(request, 'update_audiobook.html', context = context)
+
+def index(request):
+    return render(request, 'index.html')  
+  
         
+
+class Detail_books(DetailView):
+    model = Books
+    template_name = "detail_books.html"
+    context_object_name = "listado"
