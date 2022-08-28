@@ -65,11 +65,31 @@
         bloque por defecto
     {% endblock %}
 
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
+    <footer 
+    class="bg-light text-center text-lg-start">
+        
+
+    <div class="text-center p-3" style="background-color: rgba(3, 25, 8, 0.2);">
+            <li class="nav-item">
+                 
+                
+                {% if request.user.is_authenticated %}
+
+                <a  href="/logout/" style="margin-right: 10rem ;">Salir de la sesion</a>
+                {% else %}  
+                <a  href="/login/" style="margin-right: 10rem ;">Iniciar sesion</a>
+
+                <a  href="/register/" style="margin-right: 10rem ;">Registrarse</a>
+
+                {% endif %}
+
+            <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(3, 25, 8, 0.2);">
             © 2023 Copyright:
-            <a class="text-dark" href="https://mdbootstrap.com/">Fabian&Ezequiel</a>
+            <a class="text-dark" href="">Fabian&Ezequiel</a>
+            </li>
+
+
         </div>
         <!-- Copyright -->
     </footer>

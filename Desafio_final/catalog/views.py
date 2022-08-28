@@ -5,10 +5,12 @@ from django.shortcuts import render, redirect
 from catalog.models import Books, Ebooks, Audiobooks
 from catalog.forms import Formulario_create_book, Formulario_create_ebook, Formulario_create_audiobook
 from django.views.generic import DetailView 
+from django.contrib.auth.decorators import login_required
 
 
 
 # Create your views here.
+
 def create_book(request):  
 
     if request.method == "POST":
@@ -26,7 +28,7 @@ def create_book(request):
         context = {"form_book": form_book}
         return render(request,"create_book.html", context=context)
 
-
+@login_required
 def list_book(request):
     books = Books.objects.all()
     context = {

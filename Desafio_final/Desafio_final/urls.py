@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from users.views import login_request, register
+from django.contrib.auth.views import LogoutView
 from catalog.views import create_book, list_book, list_ebook,list_audiobook, search_books, create_ebook, create_audiobook, delete_book, delete_ebook, delete_audiobook, update_book, update_ebook, update_audiobook, index, Detail_books
 urlpatterns = [
 
@@ -21,5 +22,6 @@ urlpatterns = [
     path('update_audiobook/<int:pk>/', update_audiobook, name = 'update_audiobook'),
     path("detail_books/", Detail_books.as_view(), name = "detail_books"),
     path("login/", login_request, name = "login"),
-    path("register/", register, name = "Register")
+    path("register/", register, name = "Register"),
+    path("logout/", LogoutView.as_view(template_name = "logout.html"), name = "logout")
     ]
