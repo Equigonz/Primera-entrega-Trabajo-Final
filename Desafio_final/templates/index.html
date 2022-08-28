@@ -7,10 +7,21 @@
 
 {% block contenido_que_cambia %}
 
+<body style="background-color: rgb(253, 211, 148);">  
+
+
 <h1>Bienvenido!!</h1>
-<h1>Elije el libro y formato que mejor se ajusta a ti</h1>
+<h1>Elige el libro y formato que mejor se ajusta a ti</h1><br>
+
+<a target="_blank" href="http://127.0.0.1:8000/list_book/">Ir a Libros, </a>
+<a target="_blank" href="http://127.0.0.1:8000/list_ebook/">Ir a Libros electrónicos, </a>
+<a target="_blank" href="http://127.0.0.1:8000/list_audiobook/">Ir a Audio libros</a><br>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUye_qJM5JeXiQND43NOL4tDeX-4xOzBbKSg&usqp=CAU" width="450" alt=""><br>
 
 <h2>{{request.user.is_authenticated}}</h2>
+
+</body>
 
 {% if message %}
 
