@@ -26,7 +26,7 @@ def create_book(request):
     elif request.method == "GET":
         form_book = Formulario_create_book()
         context = {"form_book": form_book}
-        return render(request,"create_book.html", context=context)
+        return render(request,"CreateAndDelete/create_book.html", context=context)
 
 @login_required
 def list_book(request):
@@ -34,7 +34,7 @@ def list_book(request):
     context = {
         "book":books
     }
-    return render(request, "list_book.html", context=context)
+    return render(request, "Catalog_List/list_book.html", context=context)
 
 
 def list_ebook(request):
@@ -42,14 +42,14 @@ def list_ebook(request):
     context = {
         "ebook":ebooks
     }
-    return render(request, "list_ebook.html", context=context)   
+    return render(request, "Catalog_List/list_ebook.html", context=context)   
     
 def list_audiobook(request):
     audiobooks = Audiobooks.objects.all()
     context = {
         "audiobook":audiobooks
     }
-    return render(request, "list_audiobook.html", context=context)    
+    return render(request, "Catalog_List/list_audiobook.html", context=context)    
 
 def search_books(request):
     search = request.GET["search"]
@@ -79,7 +79,7 @@ def create_ebook(request):
     elif request.method == "GET":
         form_ebook = Formulario_create_ebook()
         context = {"form_ebook": form_ebook}
-        return render(request,"create_ebook.html", context=context)        
+        return render(request,"CreateAndDelete/create_ebook.html", context=context)        
     
 def create_audiobook(request):  
 
@@ -96,13 +96,13 @@ def create_audiobook(request):
     elif request.method == "GET":
         form_audiobook = Formulario_create_audiobook()
         context = {"form_audiobook": form_audiobook}
-        return render(request,"create_audiobook.html", context=context)           
+        return render(request,"CreateAndDelete/create_audiobook.html", context=context)           
 
 def delete_book(request, pk):
     if request.method == 'GET':
         book = Books.objects.get(pk=pk)
         context = {'book':book}
-        return render(request, 'delete_book.html', context=context)
+        return render(request, 'CreateAndDelete/delete_book.html', context=context)
     elif request.method == 'POST':
         book = Books.objects.get(pk=pk)
         book.delete()
@@ -112,7 +112,7 @@ def delete_ebook(request, pk):
     if request.method == 'GET':
         ebook = Ebooks.objects.get(pk=pk)
         context = {'ebook':ebook}
-        return render(request, 'delete_ebook.html', context=context)
+        return render(request, 'CreateAndDelete/delete_ebook.html', context=context)
     elif request.method == 'POST':
         ebook = Ebooks.objects.get(pk=pk)
         ebook.delete()
@@ -122,7 +122,7 @@ def delete_audiobook(request, pk):
     if request.method == 'GET':
         audiobook = Audiobooks.objects.get(pk=pk)
         context = {'audiobook':audiobook}
-        return render(request, 'delete_audiobook.html', context=context)
+        return render(request, 'CreateAndDelete/delete_audiobook.html', context=context)
     elif request.method == 'POST':
         audiobook = Audiobooks.objects.get(pk=pk)
         audiobook.delete()
@@ -146,7 +146,7 @@ def update_book(request, pk):
         form_book = Formulario_create_book(initial={'title':book.title, 'book_genre':book.book_genre})
         context = {'form_book': form_book}
         
-        return render(request, 'update_book.html', context = context)
+        return render(request, 'Update/update_book.html', context = context)
 
 def update_ebook(request, pk):
     if request.method == 'POST':
@@ -166,7 +166,7 @@ def update_ebook(request, pk):
         form_ebook = Formulario_create_ebook(initial={'title':ebook.title, 'book_genre':ebook.book_genre})
         context = {'form_ebook': form_ebook}
         
-        return render(request, 'update_ebook.html', context = context)
+        return render(request, 'Update/update_ebook.html', context = context)
 
 def update_audiobook(request, pk):
     if request.method == 'POST':
@@ -186,7 +186,7 @@ def update_audiobook(request, pk):
         form_audiobook = Formulario_create_audiobook(initial={'title':audiobook.title, 'book_genre':audiobook.book_genre})
         context = {'form_audiobook': form_audiobook}
         
-        return render(request, 'update_audiobook.html', context = context)
+        return render(request, 'Update/update_audiobook.html', context = context)
 
 def index(request):
     return render(request, 'index.html')  
