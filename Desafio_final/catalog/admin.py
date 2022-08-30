@@ -2,7 +2,7 @@ from django.contrib import admin
 from catalog.models import Books
 from catalog.models import Ebooks
 from catalog.models import Audiobooks
-# Register your models here.
+
 
 @admin.register(Audiobooks)
 class Audiobooks_admin(admin.ModelAdmin):

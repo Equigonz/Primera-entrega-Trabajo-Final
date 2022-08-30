@@ -1,6 +1,6 @@
 from django.db import models
 
-# genero 3 modelos que vamos a vender
+
 
 class Books(models.Model):
     title = models.CharField(max_length=120)
