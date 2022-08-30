@@ -54,7 +54,13 @@ def list_audiobook(request):
 def search_books(request):
     search = request.GET["search"]
     books = Books.objects.filter(title__icontains = search)
-    context = {"books":books}
+    ebooks = Ebooks.objects.filter(title__icontains = search)
+    audiobooks = Audiobooks.objects.filter(title__icontains = search)
+    context = {
+        "books":books,
+        "ebooks":ebooks,
+        "audiobooks":audiobooks
+        }
     return render(request, "search_books.html", context=context)
 
 
@@ -189,5 +195,6 @@ def index(request):
 
 class Detail_books(DetailView):
     model = Books
-    template_name = "detail_books.html"
-    context_object_name = "listado"
+    template_title = "detail_books.html"
+    context_object_title = "listado"
+
