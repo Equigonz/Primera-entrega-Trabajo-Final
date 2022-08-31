@@ -7,14 +7,15 @@
 {% block contenido_que_cambia %}
 
 
-{% for book in book %} 
+{% for book in catalog %} 
 
 <div class="card" style="width: 18rem;">
     <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title"> Titulo :  {{book.title}}</h5>
+      <p class="card-title"> Titulo :  {{book.title}}</p>
       <p class="card-text">  Genero : {{book.book_genre}}</p>
-          </div>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
   </div>
 
   
