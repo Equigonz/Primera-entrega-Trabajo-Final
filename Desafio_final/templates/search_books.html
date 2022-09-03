@@ -7,19 +7,46 @@
 {% block contenido_que_cambia %}
 
 
-{% for book in catalog %} 
+{% for book in books %} 
 
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-title"> Titulo :  {{book.title}}</p>
-      <p class="card-text">  Genero : {{book.book_genre}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-title"> Titulo :  {{book.title}}</p>
+                  <p class="card-text">  Genero : {{book.book_genre}}</p>
+                  
+                </div>
+        </div>
 
   
 {% endfor%}
 
+{% for ebook in ebooks %} 
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-title"> Titulo :  {{ebook.title}}</p>
+                  <p class="card-text">  Genero : {{ebook.book_genre}}</p>
+                  
+                </div>
+        </div>
+
+  
+{% endfor%}
+
+{% for audiobook in audiobooks %} 
+
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-title"> Titulo :  {{book.title}}</p>
+                  <p class="card-text">  Genero : {{book.book_genre}}</p>
+                  
+                </div>
+          </div>
+
+  
+{% endfor%}
 
 {% endblock %}

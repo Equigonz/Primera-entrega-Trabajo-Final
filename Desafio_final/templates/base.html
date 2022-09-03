@@ -45,18 +45,16 @@
                     <a class="nav-link" href="/list_audiobook/">Listado audiolibro</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" action="/search_books/" method="GET">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar Libro" aria-label="Search" title = "search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-            <form class="form-inline my-2 my-lg-0" action="/search_ebook/" method="GET">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar Ebook" aria-label="Search" name = 'search'>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-            <form class="form-inline my-2 my-lg-0" action="/search_audiobook/" method="GET">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar Audiolibro" aria-label="Search" name = 'search'>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+            <div style="text-align: right";>
+                <form action="{% url 'search_books' %}" method="GET"> {% csrf_token %}
+
+                    <input aling="right" type = 'text' name="search" id="search" placeholder="Nombre del Libro">
+                    
+                    <input type="Submit" name="Buscar" id="right">
+
+                </form>
+
+            </div>
         </div>
     </nav>
 

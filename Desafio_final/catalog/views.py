@@ -53,15 +53,18 @@ def list_audiobook(request):
     return render(request, "Catalog_List/list_audiobook.html", context=context)    
 
 def search_books(request):
-    search = request.GET["search"]
-    books = Books.objects.filter(title__icontains = search)
-    ebooks = Ebooks.objects.filter(title__icontains = search)
-    audiobooks = Audiobooks.objects.filter(title__icontains = search)
-    context = {
-        "books":books,
-        "ebooks":ebooks,
-        "audiobooks":audiobooks
-        }
+    if request.GET['search']:
+        search = request.GET["search"]
+    
+        books = Books.objects.filter(title__icontains = search)
+        ebooks = Ebooks.objects.filter(title__icontains = search)
+        audiobooks = Audiobooks.objects.filter(title__icontains = search)
+   
+        context = {
+            "books":books,
+            "ebooks":ebooks,
+            "audiobooks":audiobooks
+            }
     return render(request, "search_books.html", context=context)
 
 
