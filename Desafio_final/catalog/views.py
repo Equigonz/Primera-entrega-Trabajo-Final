@@ -29,7 +29,7 @@ def create_book(request):
         context = {"form_book": form_book}
         return render(request,"CreateAndDelete/create_book.html", context=context)
 
-@login_required
+
 def list_book(request):
     books = Books.objects.all()
     context = {

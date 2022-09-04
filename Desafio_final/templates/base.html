@@ -24,27 +24,51 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            {% if request.user.is_staff %}
+                <ul class="navbar-nav mr-auto">
                 
-                <li class="nav-item">
-                    <a class="nav-link" href="/create_book/">Crear libro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/list_book/" style="margin-right: 5rem ;">Listado Libros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/create_ebook/">Crear libro electronico</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/list_ebook/"style="margin-right: 5rem ;">Listado libro electronico</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/create_audiobook/">Crear audiolibro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/list_audiobook/">Listado audiolibro</a>
-                </li>
-            </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_book/">Crear libro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list_book/" style="margin-right: 5rem ;">Listado Libros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_ebook/">Crear libro electronico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list_ebook/"style="margin-right: 5rem ;">Listado libro electronico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_audiobook/">Crear audiolibro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list_audiobook/">Listado audiolibro</a>
+                    </li>
+
+                </ul>
+            
+            {% else %}
+                <ul class="navbar-nav mr-auto">
+                
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list_book/" style="margin-right: 5rem ;">Listado Libros</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list_ebook/"style="margin-right: 5rem ;">Listado libro electronico</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" href="/list_audiobook/">Listado audiolibro</a>
+                    </li>
+
+                </ul>
+            
+            {% endif %}
+        
+        
             <div style="text-align: right";>
                 <form action="{% url 'search_books' %}" method="GET"> {% csrf_token %}
 
@@ -53,6 +77,8 @@
                     <input type="Submit" name="Buscar" id="right">
 
                 </form>
+            
+            
 
             </div>
         </div>
